@@ -22,7 +22,7 @@
         "ecmaVersion": "latest",
         "sourceType": "module",
         "tsconfigRootDir": "youtube-client",
-        "project": ["tsconfig.(app|spec).json"]
+        "project": ["tsconfig.json"]
       },
       "rules": {
         "@angular-eslint/directive-selector": [
