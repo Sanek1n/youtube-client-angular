@@ -44,11 +44,11 @@ interface ISnippet {
 }
 
 interface IStatistics {
-    viewCount: string,
-    likeCount: string,
-    dislikeCount: string,
-    favoriteCount: string,
-    commentCount: string
+  viewCount: string,
+  likeCount: string,
+  dislikeCount: string,
+  favoriteCount: string,
+  commentCount: string
 }
 
 interface ISearchItem {
