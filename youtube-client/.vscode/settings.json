@@ -9,7 +9,7 @@
       "source.fixAll.eslint": true,
     },
 
-    // "eslint.workingDirectories": [
-    //   "youtube-client"
-    // ]
+    "eslint.workingDirectories": [
+      "youtube-client"
+    ]
 }
