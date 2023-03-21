@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export default class HeaderComponent {
+  searchSettings = false;
 
+  toggleSettings() {
+    this.searchSettings = !this.searchSettings;
+  }
 }

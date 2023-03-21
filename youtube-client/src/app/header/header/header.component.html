@@ -5,7 +5,10 @@
         <a class="header__logo"><img src="../../../assets/images/logo.png" alt="logo"></a>
         <input matInput placeholder="What are you want to find out?" class="header__field">
         <button mat-raised-button class="header__submit">search</button>
-        <button mat-icon-button color="primary" aria-label="Example icon button with a delete icon">
+        <button 
+          mat-icon-button color="primary" 
+          (click)="toggleSettings()"
+        >
           <img src="../../../assets/images/search_settings.png" alt="settings">
         </button>
       </div>
@@ -15,4 +18,5 @@
       </div>
     </div>
   </div>
+  <app-search-settings *ngIf="searchSettings"></app-search-settings>
 </header>

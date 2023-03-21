@@ -2,9 +2,10 @@
 
 .header {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
-  height: 80px;
+  min-height: 80px;
   font-size: 12px;
   background-color: $header-cover;
 
@@ -13,9 +14,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: 13px auto;
     max-width: 1280px;
     width: 100%;
+    height: 54px;
 
     @media screen and (max-width: 800px) {
       justify-content: flex-start;
