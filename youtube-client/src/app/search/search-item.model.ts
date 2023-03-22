@@ -27,7 +27,7 @@ interface IThumbnails {
 }
 
 interface ISnippet {
-  publishedAt: Date,
+  publishedAt: string,
   channelId: string,
   title: string,
   description: string,

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export default class HeaderComponent {
   searchSettings = false;
 
-  toggleSettings() {
+  toggleSettings():void {
     this.searchSettings = !this.searchSettings;
   }
 }

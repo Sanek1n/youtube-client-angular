@@ -12,6 +12,7 @@ import SearchResultsComponent from './search/search-results/search-results.compo
 import SearchItemComponent from './search/search-item/search-item.component';
 import RegistrationComponent from './main/registration/registration.component';
 import CreateCardComponent from './main/create-card/create-card.component';
+import DataService from './data.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import CreateCardComponent from './main/create-card/create-card.component';
     MatInputModule,
     MatButtonModule,
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
 })
 export default class AppModule { }
