@@ -3,9 +3,9 @@
     <div class="settings__content">
       <p class="settings__title">Sorting by:</p>
       <ul class="settings__list">
-        <li class="settings__item">Date</li>
-        <li class="settings__item">count of views</li>
-        <li class="settings__item">by word or sentance</li>
+        <li class="settings__item" (click)="sortByDate()">Date</li>
+        <li class="settings__item" (click)="sortByView()">count of views</li>
+        <li class="settings__item" (click)="sortByWord()">by word or sentance</li>
       </ul>
       <input type="text" class="settings__field">
     </div>
