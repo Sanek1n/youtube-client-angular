@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import ISearchItem from '../search-item.model';
 
 @Component({
   selector: 'app-search-item',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-item.component.scss'],
 })
 export default class SearchItemComponent {
-
+  @Input()
+    cardData!: ISearchItem;
 }
