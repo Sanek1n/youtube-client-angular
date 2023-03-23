@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import DataService from 'src/app/data.service';
 import ISearchItem from 'src/app/models/search-item.model';
+import { ISearchResponse } from '../../models/search-response.model';
+import mockData from '../../mock-data/response.json';
 
 @Component({
   selector: 'app-header',
@@ -12,14 +13,13 @@ export default class HeaderComponent {
 
   searchSettings = false;
 
-  constructor(private dataService: DataService) {
-  }
+  private data: ISearchResponse = mockData;
 
   toggleSettings():void {
     this.searchSettings = !this.searchSettings;
   }
 
   getData(): void {
-    this.newDataEvent.emit(this.dataService.getItems());
+    this.newDataEvent.emit(this.data.items);
   }
 }
