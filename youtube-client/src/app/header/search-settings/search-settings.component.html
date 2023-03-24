@@ -5,9 +5,14 @@
       <ul class="settings__list">
         <li class="settings__item" (click)="sortByDate()">Date</li>
         <li class="settings__item" (click)="sortByView()">count of views</li>
-        <li class="settings__item" (click)="sortByWord()">by word or sentance</li>
+        <li class="settings__item">by word or sentance</li>
       </ul>
-      <input type="text" class="settings__field">
+      <input
+        #search
+        type="text" 
+        class="settings__field" 
+        (input)="sortByWord(search.value)"
+      >
     </div>
   </div>
 </div>

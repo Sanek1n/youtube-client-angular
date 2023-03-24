@@ -25,6 +25,7 @@
   &__statistic {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
     list-style: none;
     width: 200px;
     margin-bottom: 20px;
@@ -59,10 +60,6 @@
 
   &__comments-icon {
     background-image: url('../../../assets/icons/coment.svg');
-  }
-
-  &__item-text {
-    margin-right: 10px;
   }
 
   &__title {

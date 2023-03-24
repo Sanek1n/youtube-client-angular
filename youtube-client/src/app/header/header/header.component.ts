@@ -35,6 +35,7 @@ export default class HeaderComponent {
         (a, b) => Date.parse(a.snippet.publishedAt) - Date.parse(b.snippet.publishedAt),
       );
     }
+    this.getData();
   }
 
   sortView(direction: string):void {
@@ -47,5 +48,17 @@ export default class HeaderComponent {
         (a, b) => Number(a.statistics.viewCount) - Number(b.statistics.viewCount),
       );
     }
+    this.getData();
+  }
+
+  sortWord(searchWord: string): void {
+    if (searchWord) {
+      this.resultItems = Array.from(this.data.items.filter(
+        (value) => value.snippet.title.toLowerCase().indexOf(searchWord.toLowerCase()) > 0,
+      ));
+    } else {
+      this.resultItems = this.data.items;
+    }
+    this.getData();
   }
 }

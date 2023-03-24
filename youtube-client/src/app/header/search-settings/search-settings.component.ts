@@ -7,14 +7,16 @@ import { ISortSetting } from 'src/app/models/sort-settings.model';
   styleUrls: ['./search-settings.component.scss'],
 })
 export default class SearchSettingsComponent {
-  private sortSettings: ISortSetting;
+  sortSettings: ISortSetting;
 
   @Output() sortDate = new EventEmitter<string>();
 
   @Output() sortView = new EventEmitter<string>();
 
+  @Output() sortWord = new EventEmitter<string>();
+
   constructor() {
-    this.sortSettings = { date: 'ASC', view: 'ASC', word: '' };
+    this.sortSettings = { date: 'ASC', view: 'ASC' };
   }
 
   sortByDate():void {
@@ -37,7 +39,7 @@ export default class SearchSettingsComponent {
     }
   }
 
-  sortByWord():void {
-    console.log(this.sortSettings.word);
+  sortByWord(word: string):void {
+    this.sortWord.emit(word);
   }
 }
