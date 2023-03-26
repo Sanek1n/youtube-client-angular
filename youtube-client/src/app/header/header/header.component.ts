@@ -54,7 +54,7 @@ export default class HeaderComponent {
   sortWord(searchWord: string): void {
     if (searchWord) {
       this.resultItems = Array.from(this.data.items.filter(
-        (value) => value.snippet.title.toLowerCase().indexOf(searchWord.toLowerCase()) > 0,
+        (value) => value.snippet.title.toLowerCase().indexOf(searchWord.toLowerCase()) >= 0,
       ));
     } else {
       this.resultItems = this.data.items;
