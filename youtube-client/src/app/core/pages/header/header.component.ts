@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import ISearchItem from 'src/app/models/search-item.model';
-import { ISearchResponse } from '../../models/search-response.model';
-import mockData from '../../mock-data/response.json';
+import ISearchItem from 'src/app/youtube/models/search-item.model';
+import mockData from '@app/shared/mock-data/response.json';
+import { ISearchResponse } from '@app/youtube/models/search-response.model';
 
 @Component({
   selector: 'app-header',

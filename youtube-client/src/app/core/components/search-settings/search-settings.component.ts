@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { ISortSetting } from 'src/app/models/sort-settings.model';
+import { ISortSetting } from 'src/app/youtube/models/sort-settings.model';
 
 @Component({
   selector: 'app-search-settings',

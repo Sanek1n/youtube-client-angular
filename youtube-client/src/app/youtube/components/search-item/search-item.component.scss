@@ -1,5 +1,5 @@
-@import '../../../styles/buttons';
-@import '../../../styles/palette.scss';
+@import 'src/styles/buttons';
+@import 'src/styles/palette.scss';
 
 .card {
   position: relative;
@@ -47,19 +47,19 @@
   }
 
   &__view-icon {
-    background-image: url('../../../assets/icons/viewed.svg');
+    background-image: url('/assets/icons/viewed.svg');
   }
 
   &__like-icon {
-    background-image: url('../../../assets/icons/liked.svg');
+    background-image: url('/assets/icons/liked.svg');
   }
 
   &__dislike-icon {
-    background-image: url('../../../assets/icons/dislike.svg');
+    background-image: url('/assets/icons/dislike.svg');
   }
 
   &__comments-icon {
-    background-image: url('../../../assets/icons/coment.svg');
+    background-image: url('/assets/icons/coment.svg');
   }
 
   &__title {
