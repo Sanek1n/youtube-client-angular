@@ -13,6 +13,7 @@ import SearchItemComponent from './youtube/components/search-item/search-item.co
 import RegistrationComponent from './auth/components/registration/registration.component';
 import CreateCardComponent from './youtube/components/create-card/create-card.component';
 import MarkDirective from './shared/directives/mark.directive';
+import ErrorPageComponent from './core/pages/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import MarkDirective from './shared/directives/mark.directive';
     RegistrationComponent,
     CreateCardComponent,
     MarkDirective,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
