@@ -59,4 +59,4 @@ interface ISearchItem {
   statistics: IStatistics
 }
 
-export default ISearchItem;
+export { ISearchItem, IStatistics };

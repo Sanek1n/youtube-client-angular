@@ -22,46 +22,6 @@
     height: 120px;
   }
 
-  &__statistic {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    list-style: none;
-    width: 200px;
-    margin-bottom: 20px;
-  }
-
-  &__item {
-    display: flex;
-    align-items: center;
-  }
-
-  &__item-icon {
-    display: block;
-    width: 20px;
-    height: 13px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 100%;
-    margin-right: 5px;
-  }
-
-  &__view-icon {
-    background-image: url('/assets/icons/viewed.svg');
-  }
-
-  &__like-icon {
-    background-image: url('/assets/icons/liked.svg');
-  }
-
-  &__dislike-icon {
-    background-image: url('/assets/icons/dislike.svg');
-  }
-
-  &__comments-icon {
-    background-image: url('/assets/icons/coment.svg');
-  }
-
   &__title {
     width: 230px;
     text-align: right;

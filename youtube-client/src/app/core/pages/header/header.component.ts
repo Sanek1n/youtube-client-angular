@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import ISearchItem from 'src/app/youtube/models/search-item.model';
+import { ISearchItem } from 'src/app/youtube/models/search-item.model';
 import mockData from '@app/shared/mock-data/response.json';
 import { ISearchResponse } from '@app/youtube/models/search-response.model';
 

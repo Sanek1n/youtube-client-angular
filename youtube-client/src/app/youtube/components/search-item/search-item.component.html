@@ -1,24 +1,7 @@
 <section class="card">
   <div class="card__content">
     <img src={{cardData.snippet.thumbnails.medium.url}} alt="thumbnails" class="card__caption">
-    <ul class="card__statistic">
-      <li class="card__item">
-        <span class="card__view-icon card__item-icon"></span>
-        <span class="card__view-count card__item-text">{{cardData.statistics.viewCount}}</span>
-      </li>
-      <li class="card__item">
-        <span class="card__like-icon card__item-icon"></span>
-        <span class="card__like-count card__item-text">{{cardData.statistics.likeCount}}</span>
-      </li>
-      <li class="card__item">
-        <span class="card__dislike-icon card__item-icon"></span>
-        <span class="card__dislike-count card__item-text">{{cardData.statistics.dislikeCount}}</span>
-      </li>
-      <li class="card__item">
-        <span class="card__comments-icon card__item-icon"></span>
-        <span class="card__comments-count card__item-text">{{cardData.statistics.commentCount}}</span>
-      </li>
-    </ul>
+    <app-statistic [statData]="cardData.statistics"></app-statistic>
     <h3 class="card__title">{{cardData.snippet.title}}</h3>
     <button mat-raised-button class="card__submit">more...</button>
   </div>

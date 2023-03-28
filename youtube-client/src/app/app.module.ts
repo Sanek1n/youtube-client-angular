@@ -15,6 +15,7 @@ import CreateCardComponent from './youtube/components/create-card/create-card.co
 import MarkDirective from './shared/directives/mark.directive';
 import ErrorPageComponent from './core/pages/error-page/error-page.component';
 import DetailPageComponent from './youtube/pages/detail-page/detail-page.component';
+import StatisticComponent from './shared/components/statistic/statistic.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import DetailPageComponent from './youtube/pages/detail-page/detail-page.compone
     MarkDirective,
     ErrorPageComponent,
     DetailPageComponent,
+    StatisticComponent,
   ],
   imports: [
     BrowserModule,
