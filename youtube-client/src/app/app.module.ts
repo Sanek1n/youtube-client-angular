@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 import AppComponent from './app.component';
 import HeaderComponent from './core/pages/header/header.component';
 import SearchSettingsComponent from './core/components/search-settings/search-settings.component';
@@ -16,6 +17,7 @@ import MarkDirective from './shared/directives/mark.directive';
 import ErrorPageComponent from './core/pages/error-page/error-page.component';
 import DetailPageComponent from './youtube/pages/detail-page/detail-page.component';
 import StatisticComponent from './shared/components/statistic/statistic.component';
+import LoginComponent from './auth/components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import StatisticComponent from './shared/components/statistic/statistic.componen
     ErrorPageComponent,
     DetailPageComponent,
     StatisticComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import StatisticComponent from './shared/components/statistic/statistic.componen
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
