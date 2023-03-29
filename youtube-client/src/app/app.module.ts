@@ -18,6 +18,7 @@ import ErrorPageComponent from './core/pages/error-page/error-page.component';
 import DetailPageComponent from './youtube/pages/detail-page/detail-page.component';
 import StatisticComponent from './shared/components/statistic/statistic.component';
 import LoginComponent from './auth/components/login/login.component';
+import LoginPageComponent from './auth/pages/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import LoginComponent from './auth/components/login/login.component';
     DetailPageComponent,
     StatisticComponent,
     LoginComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
