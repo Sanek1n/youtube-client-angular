@@ -19,6 +19,7 @@ import DetailPageComponent from './youtube/pages/detail-page/detail-page.compone
 import StatisticComponent from './shared/components/statistic/statistic.component';
 import LoginComponent from './auth/components/login/login.component';
 import LoginPageComponent from './auth/pages/login-page/login-page.component';
+import AppRoutingModule from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import LoginPageComponent from './auth/pages/login-page/login-page.component';
     MatInputModule,
     MatButtonModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
