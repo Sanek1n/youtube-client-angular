@@ -5,12 +5,27 @@ import LoginPageComponent from './auth/pages/login-page/login-page.component';
 import DetailPageComponent from './youtube/pages/detail-page/detail-page.component';
 import ErrorPageComponent from './core/pages/error-page/error-page.component';
 import MainPageComponent from './youtube/pages/main-page/main-page.component';
+import AuthGuard from './auth/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: MainPageComponent },
   { path: 'auth', component: LoginPageComponent },
-  { path: 'detail/:id', component: DetailPageComponent },
-  { path: '**', component: ErrorPageComponent },
+  {
+    path: '',
+    component: MainPageComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
+  },
+  {
+    path: 'detail/:id',
+    component: DetailPageComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
+  },
+  {
+    path: '**',
+    component: ErrorPageComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({

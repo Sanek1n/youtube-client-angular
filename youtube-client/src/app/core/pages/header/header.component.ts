@@ -1,7 +1,11 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import {
+  Component, Output, EventEmitter, Inject,
+} from '@angular/core';
 import { ISearchItem } from 'src/app/youtube/models/search-item.model';
 import mockData from '@app/shared/mock-data/response.json';
 import { ISearchResponse } from '@app/youtube/models/search-response.model';
+import AuthService from '@app/auth/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +13,11 @@ import { ISearchResponse } from '@app/youtube/models/search-response.model';
   styleUrls: ['./header.component.scss'],
 })
 export default class HeaderComponent {
+  constructor(
+    @Inject(AuthService) private auth: AuthService,
+    private router: Router,
+  ) {}
+
   @Output() newDataEvent = new EventEmitter<Array<ISearchItem>>();
 
   searchSettings = false;
@@ -19,6 +28,11 @@ export default class HeaderComponent {
 
   toggleSettings():void {
     this.searchSettings = !this.searchSettings;
+  }
+
+  logout() {
+    this.auth.delToken();
+    this.router.navigateByUrl('auth');
   }
 
   getData(): void {
