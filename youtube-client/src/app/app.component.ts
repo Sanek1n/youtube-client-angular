@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ISearchItem } from './youtube/models/search-item.model';
+// import { ISearchItem } from './youtube/models/search-item.model';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,9 @@ import { ISearchItem } from './youtube/models/search-item.model';
 export default class AppComponent {
   title = 'youtube-client';
 
-  dataItems: Array<ISearchItem> = [];
+  // dataItems: Array<ISearchItem> = [];
 
-  addItem(newItem: ISearchItem[]): void {
-    this.dataItems = newItem;
-  }
+  // addItem(newItem: ISearchItem[]): void {
+  //   this.dataItems = newItem;
+  // }
 }
