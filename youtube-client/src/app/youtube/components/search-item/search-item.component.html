@@ -3,7 +3,7 @@
     <img src={{cardData.snippet.thumbnails.medium.url}} alt="thumbnails" class="card__caption">
     <app-statistic [statData]="cardData.statistics"></app-statistic>
     <h3 class="card__title">{{cardData.snippet.title}}</h3>
-    <button mat-raised-button class="card__submit">more...</button>
+    <button mat-raised-button class="card__submit" (click)="loadCard()">more...</button>
   </div>
   <div appMarked [dateCard]="cardData.snippet.publishedAt" class="card__label">
   </div>

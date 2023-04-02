@@ -46,4 +46,8 @@ export default class DataService {
       this.resultItems = this.data.items;
     }
   }
+
+  getCard(id: string): ISearchItem {
+    return this.data.items.filter((value) => value.id === id)[0];
+  }
 }

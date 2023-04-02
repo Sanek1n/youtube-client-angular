@@ -19,13 +19,11 @@
     height: 461px;
     background-color: $header-cover;
     border-radius: 0 5px 5px 5px;
-    box-shadow: 5px 5px 5px -1px $primary-blue;
     overflow: hidden;
   }
 
   &__video {
     width: 60%;
-    background-image: url('https://i.ytimg.com/vi/Fdf5aTYRW0E/maxresdefault.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 100%;
@@ -41,13 +39,13 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   &__title {
     font-size: 24px;
     font-weight: 600;
-    width: 50%;
+    width: 70%;
   }
 
   &__date {
@@ -64,6 +62,8 @@
   &__desc {
     font-size: 12px;
     color: $light-gray-text;
+    height: 200px;
+    overflow: auto;
   }
 
   &__statistics {
