@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import StatisticComponent from './components/statistic/statistic.component';
 import MarkDirective from './directives/mark.directive';
 
@@ -9,7 +9,7 @@ import MarkDirective from './directives/mark.directive';
     MarkDirective,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
   ],
   exports: [
     StatisticComponent,

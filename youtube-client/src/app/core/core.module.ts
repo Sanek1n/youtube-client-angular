@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { BrowserModule } from '@angular/platform-browser';
 import SharedModule from '@app/shared/shared.module';
+import { CommonModule } from '@angular/common';
 import AuthModule from '@app/auth/auth.module';
 import SearchSettingsComponent from './components/search-settings/search-settings.component';
 import ErrorPageComponent from './pages/error-page/error-page.component';
@@ -16,7 +16,7 @@ import DataService from './services/data.service';
     HeaderComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     MatButtonModule,
     MatInputModule,
     AuthModule,

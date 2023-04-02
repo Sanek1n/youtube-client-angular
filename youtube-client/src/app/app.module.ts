@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 import AppComponent from './app.component';
 import AppRoutingModule from './app-routing.module';
 import YoutubeModule from './youtube/youtube.module';
@@ -15,8 +16,6 @@ import SharedModule from './shared/shared.module';
     AppComponent,
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
     YoutubeModule,
     CoreModule,
@@ -28,6 +27,9 @@ import SharedModule from './shared/shared.module';
   exports: [
     MatButtonModule,
     MatInputModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

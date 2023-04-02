@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailPageComponent } from './detail-page.component';
+import DetailPageComponent from './detail-page.component';
 
 describe('DetailPageComponent', () => {
   let component: DetailPageComponent;
@@ -8,9 +8,9 @@ describe('DetailPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailPageComponent ]
+      declarations: [DetailPageComponent],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(DetailPageComponent);
     component = fixture.componentInstance;
