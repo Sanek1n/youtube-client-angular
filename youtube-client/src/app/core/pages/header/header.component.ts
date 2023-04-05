@@ -4,6 +4,9 @@ import {
 import AuthService from '@app/auth/services/auth.service';
 import { Router } from '@angular/router';
 import DataService from '@app/core/services/data.service';
+import {
+  Subject, debounceTime, distinctUntilChanged, filter,
+} from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -23,14 +26,19 @@ export default class HeaderComponent implements OnInit {
 
   userName = '';
 
-  searchData = '';
+  private searchTerms = new Subject<string>();
 
   ngOnInit(): void {
     this.getAuth();
     this.userName = this.auth.getUserNme();
+    this.searchTerms.pipe(
+      debounceTime(500),
+      distinctUntilChanged(),
+      filter((res) => res.length > 2),
+    ).subscribe((terms) => this.dataService.setSearch(terms));
   }
 
-  getAuth() {
+  getAuth(): void {
     this.auth.loginSubject$.subscribe((value) => { this.isAuth = value; });
     this.auth.userSubject$.subscribe((value) => { this.userName = value; });
   }
@@ -39,16 +47,15 @@ export default class HeaderComponent implements OnInit {
     this.searchSettings = !this.searchSettings;
   }
 
-  logout() {
+  logout(): void {
     if (this.isAuth) {
       this.auth.delToken();
       this.router.navigateByUrl('auth');
     }
   }
 
-  getData(): void {
-    this.dataService.setSearch(this.searchData);
-    this.router.navigateByUrl('');
+  inputSearch(searchData: string) {
+    this.searchTerms.next(searchData);
   }
 
   sortDate(direction: string):void {

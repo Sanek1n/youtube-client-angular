@@ -4,15 +4,11 @@
       <div class="header__search">
         <a class="header__logo"><img src="./assets/images/logo.png" alt="logo"></a>
         <input matInput 
+          #searchBox
           placeholder="What are you want to find out?" 
           class="header__field"
-          [(ngModel)]="searchData"
+          (input)="inputSearch(searchBox.value)"
         >
-        <button mat-raised-button
-          type="button"
-          class="header__submit"
-          (click)="getData()"
-        >search</button>
         <button 
           mat-icon-button color="primary" 
           (click)="toggleSettings()"

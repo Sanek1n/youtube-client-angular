@@ -41,14 +41,6 @@
     align-items: center;
     justify-self: center;
   }
-
-  &__search > &__submit {
-    @include main_btn;
-    width: 80px;
-    height: 24px;
-    border-radius: 0 5px 5px 0px;
-  }
-
   
   &__field {
     display: block;
