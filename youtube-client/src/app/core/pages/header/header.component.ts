@@ -23,16 +23,16 @@ export default class HeaderComponent implements OnInit {
 
   userName = '';
 
+  searchData = '';
+
   ngOnInit(): void {
     this.getAuth();
     this.userName = this.auth.getUserNme();
   }
 
   getAuth() {
-    // eslint-disable-next-line no-return-assign
-    this.auth.loginSubject$.subscribe((value) => this.isAuth = value);
-    // eslint-disable-next-line no-return-assign
-    this.auth.userSubject$.subscribe((value) => this.userName = value);
+    this.auth.loginSubject$.subscribe((value) => { this.isAuth = value; });
+    this.auth.userSubject$.subscribe((value) => { this.userName = value; });
   }
 
   toggleSettings():void {
@@ -47,13 +47,7 @@ export default class HeaderComponent implements OnInit {
   }
 
   getData(): void {
-    // // eslint-disable-next-line no-return-assign
-    // this.dataService.getItems()
-    //   .subscribe((value) => this.dataService.getVideo((value.items.map((el) => el.id.videoId)))
-    //   // eslint-disable-next-line no-return-assign
-    //     .subscribe((result) => this.items = result.items));
-
-    this.dataService.getItems().subscribe((x) => console.log(x));
+    this.dataService.setSearch(this.searchData);
     this.router.navigateByUrl('');
   }
 

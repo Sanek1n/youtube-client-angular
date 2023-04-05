@@ -13,10 +13,6 @@ export default class SearchResultsComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    // eslint-disable-next-line no-return-assign
-    this.dataService.getItems()
-      .subscribe((value) => this.dataService.getVideo((value.items.map((el) => el.id.videoId)))
-      // eslint-disable-next-line no-return-assign
-        .subscribe((result) => this.items = result.items));
+    this.dataService.resultSubject$.subscribe((result) => { this.items = result; });
   }
 }

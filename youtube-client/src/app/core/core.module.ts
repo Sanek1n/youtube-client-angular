@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import SharedModule from '@app/shared/shared.module';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import AuthModule from '@app/auth/auth.module';
 import SearchSettingsComponent from './components/search-settings/search-settings.component';
@@ -21,6 +22,7 @@ import DataService from './services/data.service';
     MatInputModule,
     AuthModule,
     SharedModule,
+    FormsModule,
   ],
   exports: [
     HeaderComponent,

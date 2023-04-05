@@ -3,7 +3,11 @@
     <div class="header__content">
       <div class="header__search">
         <a class="header__logo"><img src="./assets/images/logo.png" alt="logo"></a>
-        <input matInput placeholder="What are you want to find out?" class="header__field">
+        <input matInput 
+          placeholder="What are you want to find out?" 
+          class="header__field"
+          [(ngModel)]="searchData"
+        >
         <button mat-raised-button
           type="button"
           class="header__submit"
