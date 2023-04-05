@@ -20,6 +20,8 @@ export default class DataService {
 
   public resultSubject$: BehaviorSubject<ISearchItem[]>;
 
+  private searchString = '';
+
   constructor(private http: HttpClient) {
     this.resultItems = [];
     this.resultSubject$ = new BehaviorSubject<ISearchItem[]>(this.resultItems);
@@ -39,45 +41,43 @@ export default class DataService {
         .subscribe((result) => {
           this.data = data;
           this.resultItems = result.items;
+          this.searchString = searchText;
           this.resultSubject$.next(this.resultItems);
         }));
   }
 
   sortDate(direction: string):void {
-    // if (direction === 'ASC') {
-    //   this.resultItems = this.data.items.sort(
-    //     (a, b) => Date.parse(b.snippet.publishedAt) - Date.parse(a.snippet.publishedAt),
-    //   );
-    // } else {
-    //   this.resultItems = this.data.items.sort(
-    //     (a, b) => Date.parse(a.snippet.publishedAt) - Date.parse(b.snippet.publishedAt),
-    //   );
-    // }
+    if (direction === 'ASC') {
+      this.resultItems = this.resultItems.sort(
+        (a, b) => Date.parse(b.snippet.publishedAt) - Date.parse(a.snippet.publishedAt),
+      );
+    } else {
+      this.resultItems = this.resultItems.sort(
+        (a, b) => Date.parse(a.snippet.publishedAt) - Date.parse(b.snippet.publishedAt),
+      );
+    }
   }
 
   sortView(direction: string):void {
-    // if (direction === 'ASC') {
-    //   this.resultItems = this.data.items.sort(
-    //     (a, b) => Number(b.statistics.viewCount) - Number(a.statistics.viewCount),
-    //   );
-    // } else {
-    //   this.resultItems = this.data.items.sort(
-    //     (a, b) => Number(a.statistics.viewCount) - Number(b.statistics.viewCount),
-    //   );
-    // }
+    if (direction === 'ASC') {
+      this.resultItems = this.resultItems.sort(
+        (a, b) => Number(b.statistics.viewCount) - Number(a.statistics.viewCount),
+      );
+    } else {
+      this.resultItems = this.resultItems.sort(
+        (a, b) => Number(a.statistics.viewCount) - Number(b.statistics.viewCount),
+      );
+    }
   }
 
   sortWord(searchWord: string): void {
-    // if (searchWord) {
-    //   this.resultItems = this.data.items.filter(
-    //     (value) => value.snippet.title.toLowerCase().indexOf(searchWord.toLowerCase()) >= 0,
-    //   );
-    // } else {
-    //   this.resultItems = this.data.items;
-    // }
-  }
-
-  getCard(id: string): void {
-    // return this.data.items.filter((value) => value.id === id)[0];
+    if (searchWord) {
+      this.resultItems = this.resultItems.filter(
+        (value) => value.snippet.title.toLowerCase().indexOf(searchWord.toLowerCase()) >= 0,
+      );
+    } else {
+      this.setSearch(this.searchString);
+    }
+    this.resultSubject$.next(this.resultItems);
   }
 }
