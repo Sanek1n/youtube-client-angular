@@ -48,6 +48,7 @@
     height: 24px;
     border-radius: 0 5px 5px 0px;
   }
+
   
   &__field {
     display: block;
@@ -64,19 +65,29 @@
   }
 
   &__user {
+    display: flex;
+    align-items: center;
     position: absolute;
     right: 0;
     margin: 0 20px;
   }
   
   &__avatar {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+    display: block;
+    padding-top: 3px;
   }
 
   &__login {
     display: block;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  &__user > &__logout {
+    @include main_btn;
+    width: 80px;
+    height: 24px;
+    border-radius: 5px;
   }
 
 }

@@ -1,9 +1,6 @@
 import {
-  Component, Inject,
+  Component, OnInit,
 } from '@angular/core';
-// import { ISearchItem } from 'src/app/youtube/models/search-item.model';
-// import mockData from '@app/shared/mock-data/response.json';
-// import { ISearchResponse } from '@app/youtube/models/search-response.model';
 import AuthService from '@app/auth/services/auth.service';
 import { Router } from '@angular/router';
 import DataService from '@app/core/services/data.service';
@@ -13,28 +10,40 @@ import DataService from '@app/core/services/data.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export default class HeaderComponent {
+export default class HeaderComponent implements OnInit {
   constructor(
-    @Inject(AuthService) private auth: AuthService,
+    private auth: AuthService,
     private router: Router,
     private dataService: DataService,
   ) {}
 
-  // @Output() newDataEvent = new EventEmitter<Array<ISearchItem>>();
-
   searchSettings = false;
 
-  // private data: ISearchResponse = mockData;
+  isAuth = false;
 
-  // private resultItems: Array<ISearchItem> = this.data.items;
+  userName = '';
+
+  ngOnInit(): void {
+    this.getAuth();
+    this.userName = this.auth.getUserNme();
+  }
+
+  getAuth() {
+    // eslint-disable-next-line no-return-assign
+    this.auth.loginSubject$.subscribe((value) => this.isAuth = value);
+    // eslint-disable-next-line no-return-assign
+    this.auth.userSubject$.subscribe((value) => this.userName = value);
+  }
 
   toggleSettings():void {
     this.searchSettings = !this.searchSettings;
   }
 
   logout() {
-    this.auth.delToken();
-    this.router.navigateByUrl('auth');
+    if (this.isAuth) {
+      this.auth.delToken();
+      this.router.navigateByUrl('auth');
+    }
   }
 
   getData(): void {

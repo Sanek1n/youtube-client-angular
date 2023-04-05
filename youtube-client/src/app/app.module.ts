@@ -10,6 +10,8 @@ import YoutubeModule from './youtube/youtube.module';
 import CoreModule from './core/core.module';
 import AuthModule from './auth/auth.module';
 import SharedModule from './shared/shared.module';
+import AuthGuard from './auth/guards/auth.guard';
+import AuthService from './auth/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import SharedModule from './shared/shared.module';
     BrowserAnimationsModule,
     CommonModule,
   ],
-  providers: [],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent],
 })
 export default class AppModule { }

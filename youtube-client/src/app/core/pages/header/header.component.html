@@ -17,13 +17,14 @@
         </button>
       </div>
       <div class="header__user">
-        <span class="header__login">Your Name</span>
-        <a class="header__avatar"><img src="./assets/images/login.png" alt="user"></a>
+        <span class="header__login">{{userName}}</span>
+        <img src="./assets/images/login.png" alt="user" class="header__avatar">
         <button 
-        mat-raised-button color="primary" 
+        mat-raised-button
+        class="header__logout"
         (click)="logout()"
       >
-        Logout
+        {{isAuth ? 'LogOut' : 'LogIn'}}
       </button>
       </div>
     </div>
