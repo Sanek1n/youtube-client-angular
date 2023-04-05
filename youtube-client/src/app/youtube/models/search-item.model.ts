@@ -54,7 +54,7 @@ interface IStatistics {
 interface ISearchItem {
   kind: string,
   etag: string,
-  id: string,
+  id: { kind: string, videoId: string },
   snippet: ISnippet,
   statistics: IStatistics
 }

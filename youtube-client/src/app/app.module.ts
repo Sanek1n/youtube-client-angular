@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import AppComponent from './app.component';
 import AppRoutingModule from './app-routing.module';
 import YoutubeModule from './youtube/youtube.module';
@@ -25,6 +26,7 @@ import AuthService from './auth/services/auth.service';
     SharedModule,
     MatButtonModule,
     MatInputModule,
+    HttpClientModule,
   ],
   exports: [
     MatButtonModule,

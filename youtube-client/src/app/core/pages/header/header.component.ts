@@ -47,7 +47,13 @@ export default class HeaderComponent implements OnInit {
   }
 
   getData(): void {
-    this.dataService.getItems();
+    // // eslint-disable-next-line no-return-assign
+    // this.dataService.getItems()
+    //   .subscribe((value) => this.dataService.getVideo((value.items.map((el) => el.id.videoId)))
+    //   // eslint-disable-next-line no-return-assign
+    //     .subscribe((result) => this.items = result.items));
+
+    this.dataService.getItems().subscribe((x) => console.log(x));
     this.router.navigateByUrl('');
   }
 

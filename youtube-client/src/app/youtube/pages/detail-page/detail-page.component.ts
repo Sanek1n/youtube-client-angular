@@ -27,6 +27,8 @@ export default class DetailPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedId = this.route.snapshot.url[1].path;
-    this.card = this.dataService.getCard(this.selectedId);
+    this.dataService.getVideo([this.selectedId])
+      // eslint-disable-next-line no-return-assign
+      .subscribe((result) => [this.card] = result.items);
   }
 }
