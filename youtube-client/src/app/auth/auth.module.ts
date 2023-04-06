@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -22,6 +22,7 @@ const routes: Routes = [
     FormsModule,
     MatButtonModule,
     RouterModule.forChild(routes),
+    ReactiveFormsModule,
   ],
   exports: [
     RouterModule,
