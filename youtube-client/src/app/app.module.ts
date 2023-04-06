@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import AppComponent from './app.component';
 import AppRoutingModule from './app-routing.module';
 import YoutubeModule from './youtube/youtube.module';
@@ -13,6 +13,7 @@ import AuthModule from './auth/auth.module';
 import SharedModule from './shared/shared.module';
 import AuthGuard from './auth/guards/auth.guard';
 import AuthService from './auth/services/auth.service';
+import ApiInterceptor from './core/interceptors/api.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,11 @@ import AuthService from './auth/services/auth.service';
     BrowserAnimationsModule,
     CommonModule,
   ],
-  providers: [AuthGuard, AuthService],
+  providers: [
+    AuthGuard,
+    AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export default class AppModule { }

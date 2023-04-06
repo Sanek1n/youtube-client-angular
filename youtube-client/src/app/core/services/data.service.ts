@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ISearchResponse } from '@app/youtube/models/search-response.model';
 import { ISearchItem } from '@app/youtube/models/search-item.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -22,17 +22,29 @@ export default class DataService {
 
   private searchString = '';
 
+  private SEARCH_URL = 'search';
+
+  private VIDEO_URL = 'videos';
+
   constructor(private http: HttpClient) {
     this.resultItems = [];
     this.resultSubject$ = new BehaviorSubject<ISearchItem[]>(this.resultItems);
   }
 
   getItems(text: string): Observable<ISearchResponse> {
-    return this.http.get<ISearchResponse>(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyB8SCq2oQnKRSQb0WiAR-VmfMCWgJVRMho&type=video&part=snippet&maxResults=15&q=${text}`);
+    const params = new HttpParams()
+      .set('type', 'video')
+      .set('part', 'snippet')
+      .set('maxResults', 15)
+      .set('q', text);
+    return this.http.get<ISearchResponse>(this.SEARCH_URL, { params });
   }
 
   getVideo(videoId: string[]): Observable<ISearchResponse> {
-    return this.http.get<ISearchResponse>(`https://www.googleapis.com/youtube/v3/videos?key=AIzaSyB8SCq2oQnKRSQb0WiAR-VmfMCWgJVRMho&id=${videoId.join(',')}&part=snippet,statistics`);
+    const params = new HttpParams()
+      .set('id', videoId.join(','))
+      .set('part', 'snippet,statistics');
+    return this.http.get<ISearchResponse>(this.VIDEO_URL, { params });
   }
 
   setSearch(searchText: string): void {
