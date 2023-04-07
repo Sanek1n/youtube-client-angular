@@ -8,8 +8,7 @@
       type="text" 
       id="login"
       required
-      name="login"
-      [(ngModel)]="loginForm.login" />
+      name="login"/>
   </div>
   <div class="form-login__valid" *ngIf="getLogin?.invalid && (getLogin?.touched || getLogin?.dirty)"></div>
   <div class="form-login__error"
@@ -24,8 +23,7 @@
       class="form-login__passwd form-login__input"
       type="password"
       required
-      name="password"
-      [(ngModel)]="loginForm.password" />
+      name="password"/>
   </div>
   <div class="form-login__valid" *ngIf="getPassword?.invalid && (getPassword?.touched || getPassword?.dirty)"></div>
   <div class="form-login__error"
