@@ -18,7 +18,9 @@
       </div>
       <div class="header__user">
         <span class="header__login">{{userName}}</span>
-        <img src="./assets/images/login.png" alt="user" class="header__avatar">
+        <a routerLink="admin">
+          <img src="./assets/images/login.png" alt="user" class="header__avatar">
+        </a>
         <button 
         mat-raised-button
         class="header__logout"

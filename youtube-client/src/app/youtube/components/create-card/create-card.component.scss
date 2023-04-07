@@ -1,0 +1,57 @@
+@import 'src/styles/palette.scss';
+@import 'src/styles/_buttons';
+
+.new-card {
+  position: relative;
+  margin: auto;
+  width: 344px;
+  border-radius: 5px;
+  background-color: $form-cover;
+  color: $dark-text;
+  padding: 20px;
+  padding-bottom: 60px;
+  margin-top: 45px;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    display: block;
+    font-size: 14px;
+    color: $gray-text;
+    margin: 5px 10px;
+  }
+
+  &__input {
+    width: 304px;
+    height: 37px;
+    background-color: $login-cover;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+  }
+
+  &__error {
+    font-size: 14px;
+    font-weight: bold;
+    color: $primary-red;
+  }
+
+  &__valid {
+    width: 100%;
+    height: 5px;
+    border-radius: 0 0 5px 5px;
+    background-color: $primary-red;
+  }
+
+  & > &__submit {
+    position: absolute;
+    @include main_btn;
+    width: 124px;
+    height: 30px;
+    border-radius: 5px;
+    right: 20px;
+    bottom: 15px;
+  }
+}

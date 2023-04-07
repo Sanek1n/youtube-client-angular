@@ -66,7 +66,7 @@ export default class LoginComponent {
   }
 
   setIsSubmit() {
-    if (this.loginForm.login && this.loginForm.password) {
+    if (this.authForm.valid) {
       this.auth.setToken();
       this.auth.setUserName(this.loginForm.login);
       this.router.navigateByUrl('');
