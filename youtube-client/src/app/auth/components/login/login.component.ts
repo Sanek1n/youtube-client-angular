@@ -72,6 +72,11 @@ export default class LoginComponent {
       this.auth.setToken();
       this.auth.setUserName(this.loginForm.login);
       this.router.navigateByUrl('');
+    } else {
+      Object.keys(this.authForm.controls).forEach((field) => {
+        const control = this.authForm.get(field);
+        control?.markAsTouched({ onlySelf: true });
+      });
     }
   }
 }
