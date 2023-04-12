@@ -7,7 +7,7 @@ import { ISearchResponse } from '@app/youtube/models/search-response.model';
 import { Observable } from 'rxjs';
 
 const API_URL = 'https://www.googleapis.com/youtube/v3';
-const API_KEY = 'AIzaSyCuY4BEtZLrlVj7eqSp4iAUseXBhpBwWFs';
+const API_KEY = 'AIzaSyB8SCq2oQnKRSQb0WiAR-VmfMCWgJVRMho';
 
 @Injectable({ providedIn: 'root' })
 export default class ApiInterceptor implements HttpInterceptor {
