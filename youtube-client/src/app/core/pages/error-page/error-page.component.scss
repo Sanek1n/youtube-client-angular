@@ -1,0 +1,32 @@
+@import 'src/styles/palette.scss';
+@import 'src/styles/_buttons.scss';
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+
+  &__content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  &__text {
+    font-size: 24px;
+    font-weight: 500;
+    color: $light-gray-text;
+  }
+
+  & > &__back {
+    @include main_btn;
+    margin-top: 50px;
+    width: 120px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+  }
+}

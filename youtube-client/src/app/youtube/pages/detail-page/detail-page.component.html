@@ -1,0 +1,22 @@
+<main class="main">
+  <div class="wrapper">
+    <div class="detail">
+      <button class="detail__back" (click)="goBack()"><img src="./assets/images/back_button.png" alt="back" class="detail__back-img"></button>
+      <div class="detail__content" *ngIf="card">
+        <div class="detail__video" [ngStyle]="{'background-image': 'url(' + card.snippet.thumbnails.maxres.url + ')'}"></div>
+        <section class="detail__info">
+          <div class="detail__header">
+            <h3 class="detail__title">{{card.snippet.title}}</h3>
+            <span class="detail__date">{{card.snippet.publishedAt | date: 'EEEE, MMMM d, y'}}</span>
+          </div>
+          <h4 class="detail__desc-title">Description:</h4>
+          <p class="detail__desc">{{card.snippet.description}}</p>
+          <div class="detail__statistics">
+            <app-statistic [statData]="card.statistics"></app-statistic>
+          </div>
+          <div appMarked [dateCard]="card.snippet.publishedAt" class="detail__label"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
