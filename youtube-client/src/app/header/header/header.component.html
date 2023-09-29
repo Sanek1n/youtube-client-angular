@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="wrapper">
+    <div class="header__content">
+      <div class="header__search">
+        <a class="header__logo"><img src="./assets/images/logo.png" alt="logo"></a>
+        <input matInput placeholder="What are you want to find out?" class="header__field">
+        <button mat-raised-button 
+          class="header__submit"
+          (click)="getData()"
+        >search</button>
+        <button 
+          mat-icon-button color="primary" 
+          (click)="toggleSettings()"
+        >
+          <img src="./assets/images/search_settings.png" alt="settings">
+        </button>
+      </div>
+      <div class="header__user">
+        <span class="header__login">Your Name</span>
+        <a class="header__avatar"><img src="./assets/images/login.png" alt="user"></a>
+      </div>
+    </div>
+  </div>
+  <app-search-settings 
+    *ngIf="searchSettings"
+    (sortDate)="sortDate($event)"
+    (sortView)="sortView($event)"
+    (sortWord)="sortWord($event)"
+  ></app-search-settings>
+</header>
