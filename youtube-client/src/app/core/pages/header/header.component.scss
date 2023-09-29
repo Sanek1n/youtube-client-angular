@@ -1,0 +1,82 @@
+@import 'src/styles/_buttons';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 80px;
+  font-size: 12px;
+  background-color: $header-cover;
+
+  &__content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 13px auto;
+    max-width: 1280px;
+    width: 100%;
+    height: 54px;
+
+    @media screen and (max-width: 800px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__empty,
+  &__user {
+    display: flex;
+    align-items: center;
+    min-width: fit-content;
+  }
+
+  &__logo {
+    margin: 0 10px;
+  }
+
+  &__search {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+  }
+
+  &__search > &__submit {
+    @include main_btn;
+    width: 80px;
+    height: 24px;
+    border-radius: 0 5px 5px 0px;
+  }
+  
+  &__field {
+    display: block;
+    width: 396px;
+    height: 24px;
+    padding: 5px;
+    background-color: $field-cover;
+    border: none;
+    outline: none;
+
+    @media screen and (max-width: 800px) {
+      width: 200px;
+    }
+  }
+
+  &__user {
+    position: absolute;
+    right: 0;
+    margin: 0 20px;
+  }
+  
+  &__avatar {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__login {
+    display: block;
+  }
+
+}
