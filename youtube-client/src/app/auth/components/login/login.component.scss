@@ -1,0 +1,44 @@
+@import 'src/styles/palette.scss';
+@import 'src/styles/_buttons';
+
+.form-login {
+  position: relative;
+  margin: auto;
+  width: 344px;
+  height: 248px;
+  border-radius: 5px;
+  background-color: $form-cover;
+  color: $dark-text;
+  padding: 20px;
+  margin-top: 45px;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    display: block;
+    font-size: 14px;
+    color: $gray-text;
+    margin: 5px 10px;
+  }
+
+  &__input {
+    width: 304px;
+    height: 37px;
+    background-color: $login-cover;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+  }
+
+  & > &__submit {
+    position: absolute;
+    @include main_btn;
+    width: 124px;
+    height: 30px;
+    border-radius: 5px;
+    right: 20px;
+    bottom: 15px;
+  }
+}

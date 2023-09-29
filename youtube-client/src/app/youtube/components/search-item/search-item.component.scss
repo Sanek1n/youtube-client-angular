@@ -1,0 +1,54 @@
+@import 'src/styles/buttons';
+@import 'src/styles/palette.scss';
+
+.card {
+  position: relative;
+  width: 260px;
+  height: 320px;
+  font-size: 10px;
+  border-radius: 5px;
+  background-color: $header-cover;
+  box-shadow: 5px 5px 5px $card-cover;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__caption {
+    margin: 20px 0;
+    width: 220px;
+    height: 120px;
+  }
+
+  &__title {
+    width: 230px;
+    text-align: right;
+    font-size: 20px;
+    color: $gray-text;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__content > &__submit {
+    @include main_btn;
+    width: 120px;
+    height: 32px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 15px;
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 0px;
+    width: 260px;
+    height: 5px;
+    background-color: $primary-blue;
+    border-radius: 0 0 5px 5px;
+  }
+
+}
