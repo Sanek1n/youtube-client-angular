@@ -1,0 +1,37 @@
+<form class="form-login" [formGroup]="authForm">
+  <h2 class="form-login__title">Login</h2>
+  <div>
+    <label class="form-login__label">login</label>
+    <input
+      formControlName="login"
+      class="form-login__login form-login__input"
+      type="text" 
+      id="login"
+      required
+      name="login"/>
+  </div>
+  <div class="form-login__valid" *ngIf="getLogin?.invalid && (getLogin?.touched || getLogin?.dirty)"></div>
+  <div class="form-login__error"
+    *ngIf="getLogin?.invalid && (getLogin?.touched || getLogin?.dirty)">
+    <span *ngIf="getLogin?.errors?.['required']">Please enter a login email</span>
+    <span *ngIf="getLogin?.errors?.['email']">The login email is invalid</span>
+</div>
+  <div>
+    <label class="form-login__label">password</label>
+    <input
+      formControlName="password"
+      class="form-login__passwd form-login__input"
+      type="password"
+      required
+      name="password"/>
+  </div>
+  <div class="form-login__valid" *ngIf="getPassword?.invalid && (getPassword?.touched || getPassword?.dirty)"></div>
+  <div class="form-login__error"
+    *ngIf="getPassword?.invalid && (getPassword?.touched || getPassword?.dirty)">
+    <span *ngIf="getPassword?.errors?.['required']">Please enter a password.</span>
+    <span *ngIf="getPassword?.getError('invalidPassword') && getPassword?.dirty">
+      {{getPassword?.getError('invalidPassword')}}
+    </span>
+  </div>
+  <button type="button" mat-raised-button class="form-login__submit" (click)="setIsSubmit()">Login</button>
+</form>

@@ -1,0 +1,40 @@
+<header class="header">
+  <div class="wrapper">
+    <div class="header__content">
+      <div class="header__search">
+        <a class="header__logo"><img src="./assets/images/logo.png" alt="logo"></a>
+        <input matInput 
+          #searchBox
+          placeholder="What are you want to find out?" 
+          class="header__field"
+          (input)="inputSearch(searchBox.value)"
+        >
+        <button 
+          mat-icon-button color="primary" 
+          (click)="toggleSettings()"
+        >
+          <img src="./assets/images/search_settings.png" alt="settings">
+        </button>
+      </div>
+      <div class="header__user">
+        <span class="header__login">{{userName}}</span>
+        <a routerLink="admin">
+          <img src="./assets/images/login.png" alt="user" class="header__avatar">
+        </a>
+        <button 
+        mat-raised-button
+        class="header__logout"
+        (click)="logout()"
+      >
+        {{isAuth ? 'LogOut' : 'LogIn'}}
+      </button>
+      </div>
+    </div>
+  </div>
+  <app-search-settings
+    *ngIf="searchSettings"
+    (sortDate)="sortDate($event)"
+    (sortView)="sortView($event)"
+    (sortWord)="sortWord($event)"
+  ></app-search-settings>
+</header>
